@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
   return (
-    <div class="bg-gray-800 ">
+    <div className="bg-gray-800 ">
       <nav className="w-full  shadow">
         <div className="justify-between px-4 mx-auto  md:items-center md:flex md:px-14">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <Link>
-                <h2 className="text-2xl font-bold text-white">
+                <h2 className="text-2xl font-bold text-white font-semibold">
                   Tourist <span className="text-rose-600"> Service</span>
                 </h2>
               </Link>
@@ -64,17 +66,49 @@ const Navbar = () => {
                 </li>
               </ul>
 
-              <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-                <Link to={"/login"} className="btn btn-sm w-full">
-                  Sign in
-                </Link>
+              <div className="mt-3 space-y-2 lg:hidden md:inline-block text-center">
+                {user?.uid ? (
+                  <div className=" items-center">
+                    <img
+                      src={user?.photoURL}
+                      className="h-12 w-12 rounded-full my-4 inline-block "
+                      alt=""
+                    />
+                    <h2 className="text-gray-100 font-semibold mb-4">
+                      {user?.displayName}
+                    </h2>
+                    <button onClick={logOut} className="btn btn-sm w-full">
+                      Logout
+                    </button>
+                  </div>
+                ) : (
+                  <Link to={"/login"} className="btn btn-sm">
+                    Sign in
+                  </Link>
+                )}
               </div>
             </div>
           </div>
           <div className="hidden space-x-2 md:inline-block">
-            <Link to={"/login"} className="btn btn-sm">
-              Sign in
-            </Link>
+            {user?.uid ? (
+              <div className="flex items-center">
+                <h2 className="text-gray-100 font-semibold">
+                  {user?.displayName}
+                </h2>
+                <img
+                  src={user?.photoURL}
+                  className="h-12 w-12 rounded-full mx-4 "
+                  alt=""
+                />{" "}
+                <button onClick={logOut} className="btn btn-sm">
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <Link to={"/login"} className="btn btn-sm">
+                Sign in
+              </Link>
+            )}
           </div>
         </div>
       </nav>

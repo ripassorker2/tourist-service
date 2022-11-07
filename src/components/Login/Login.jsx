@@ -1,7 +1,63 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import toast from "react-hot-toast";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Login = () => {
+  const {
+    signInEmailPassword,
+    signWithGoogle,
+    signWithGitHub,
+    forgottenPassword,
+  } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/home";
+
+  const handleSubmitInfo = (event) => {
+    event.preventDefault();
+
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    signInEmailPassword(email, password)
+      .then(() => {
+        toast.success("Login succesFully");
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        toast.error(errorMessage);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    signWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        toast.success("Login succesfully ");
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        toast.error(errorMessage);
+      });
+  };
+  const handleGitHUbSignIn = () => {
+    signWithGitHub()
+      .then((result) => {
+        const user = result.user;
+        toast.success("Login succesfully ");
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        toast.error(errorMessage);
+      });
+  };
+
   return (
     <div className="hero my-7">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -9,7 +65,7 @@ const Login = () => {
           <img src="" alt="" className="" />
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 ">
-          <form className="card-body">
+          <form onSubmit={handleSubmitInfo} className="card-body">
             <h1 className="text-center text-4xl text-rose-500 font-bold">
               SIGN IN
             </h1>
@@ -49,7 +105,10 @@ const Login = () => {
                 RESISTER
               </Link>{" "}
             </div>
-            <button className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full my-3">
+            <button
+              onClick={handleGoogleSignIn}
+              className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full my-3"
+            >
               <svg
                 width={19}
                 height={20}
