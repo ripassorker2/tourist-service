@@ -5,7 +5,7 @@ const Bannar = () => {
   return (
     <div className="-z-20">
       <section className="relative bg-[url(https://dailyasianage.com/library/1582060099_9.jpg)] bg-cover bg-center bg-no-repeat">
-        <div className="absolute inset-0 bg-white/50 sm:bg-transparent sm:bg-gradient-to-r sm:from-black/70 sm:to-white/25"></div>
+        <div className="absolute inset-0  bg-transparent bg-gradient-to-r from-black/70 to-white/25"></div>
 
         <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
           <div className="max-w-xl text-center sm:text-left">
@@ -16,7 +16,7 @@ const Bannar = () => {
               </strong>
             </h1>
 
-            <p className="mt-4 max-w-lg sm:text-lg md:text-gray-200 sm:leading-relaxed">
+            <p className="mt-4 max-w-lg sm:text-lg text-gray-200 sm:leading-relaxed">
               Tourism, the act and process of spending time away from home in
               pursuit of recreation, relaxation, and pleasure, while making use
               of the commercial provision of services. As such, tourism is a

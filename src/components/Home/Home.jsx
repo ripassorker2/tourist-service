@@ -1,10 +1,16 @@
 import React from "react";
 import Bannar from "./Bannar";
+import Partner from "./Partners";
+// import JoinUs from "./JoinUs";
+import Team from "./Team";
 
 const Home = () => {
   return (
     <div>
       <Bannar />
+      <Team />
+      <Partner />
+      {/* <JoinUs /> */}
 
       {/* <div className="relative w-full h-full">
         <div className="absolute hidden w-full bg-gray-50 lg:block h-96" />
@@ -80,7 +86,9 @@ const Home = () => {
                         />
                       </svg>
                     </div>
-                    <p className="font-medium text-gray-300">10 deploys per day</p>
+                    <p className="font-medium text-gray-300">
+                      10 deploys per day
+                    </p>
                   </li>
                   <li className="flex items-center">
                     <div className="mr-3">
@@ -104,7 +112,9 @@ const Home = () => {
                         />
                       </svg>
                     </div>
-                    <p className="font-medium text-gray-300">10 GB of storage</p>
+                    <p className="font-medium text-gray-300">
+                      10 GB of storage
+                    </p>
                   </li>
                   <li className="flex items-center">
                     <div className="mr-3">
@@ -152,7 +162,9 @@ const Home = () => {
                         />
                       </svg>
                     </div>
-                    <p className="font-medium text-gray-300">SSL Certificates</p>
+                    <p className="font-medium text-gray-300">
+                      SSL Certificates
+                    </p>
                   </li>
                 </ul>
                 <button
@@ -202,7 +214,9 @@ const Home = () => {
                         />
                       </svg>
                     </div>
-                    <p className="font-medium text-gray-300">100 deploys per day</p>
+                    <p className="font-medium text-gray-300">
+                      100 deploys per day
+                    </p>
                   </li>
                   <li className="flex items-center">
                     <div className="mr-3">
@@ -226,7 +240,9 @@ const Home = () => {
                         />
                       </svg>
                     </div>
-                    <p className="font-medium text-gray-300">50 GB of storage</p>
+                    <p className="font-medium text-gray-300">
+                      50 GB of storage
+                    </p>
                   </li>
                   <li className="flex items-center">
                     <div className="mr-3">
@@ -250,7 +266,9 @@ const Home = () => {
                         />
                       </svg>
                     </div>
-                    <p className="font-medium text-gray-300">Unlimited domains</p>
+                    <p className="font-medium text-gray-300">
+                      Unlimited domains
+                    </p>
                   </li>
                   <li className="flex items-center">
                     <div className="mr-3">
@@ -274,7 +292,9 @@ const Home = () => {
                         />
                       </svg>
                     </div>
-                    <p className="font-medium text-gray-300">SSL Certificates</p>
+                    <p className="font-medium text-gray-300">
+                      SSL Certificates
+                    </p>
                   </li>
                 </ul>
                 <button

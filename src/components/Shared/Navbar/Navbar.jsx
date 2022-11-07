@@ -12,7 +12,7 @@ const Navbar = () => {
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <Link>
-                <h2 className="text-2xl font-bold text-white font-semibold">
+                <h2 className="text-2xl font-bold text-white ">
                   Tourist <span className="text-rose-600"> Service</span>
                 </h2>
               </Link>
@@ -64,9 +64,12 @@ const Navbar = () => {
                 <li className="text-white hover:text-indigo-200">
                   <Link to={"/home"}>Home</Link>
                 </li>
+                <li className="text-white hover:text-indigo-200">
+                  <Link to={"/blogs"}>Blogs</Link>
+                </li>
               </ul>
 
-              <div className="mt-3 space-y-2 lg:hidden md:inline-block text-center">
+              <div className="mt-3 space-y-2 md:hidden block text-center">
                 {user?.uid ? (
                   <div className=" items-center">
                     <img
