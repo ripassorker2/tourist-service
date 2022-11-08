@@ -5,10 +5,12 @@ import AddService from "../components/AddService/AddService";
 import Blogs from "../components/Blogs/Blogs";
 import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
+import MyReview from "../components/MyReview/MyReview";
 import Resister from "../components/Resister/Resister";
 import ServiceDetails from "../components/Services/ServiceDetails";
 import Services from "../components/Services/Services";
 import Main from "../Main/Main";
+import PrivetRouter from "./PrivetRouter";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ export const router = createBrowserRouter([
       { path: "/services", element: <Services /> },
       { path: "/addService", element: <AddService /> },
       {
+        path: "/myReview",
+        element: (
+          <PrivetRouter>
+            <MyReview />
+          </PrivetRouter>
+        ),
+      },
+      {
         path: "/serviceDetails/:id",
         element: <ServiceDetails />,
         loader: ({ params }) =>
@@ -27,7 +37,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/addReview/:id",
-        element: <AddReview />,
+        element: (
+          <PrivetRouter>
+            <AddReview />
+          </PrivetRouter>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/service/${params.id}`),
       },

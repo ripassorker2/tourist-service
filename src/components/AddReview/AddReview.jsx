@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import toast from "react-hot-toast";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const AddReview = () => {
   const { user } = useContext(AuthContext);
   const reviewService = useLoaderData();
+
+  const navigate = useNavigate();
 
   const handleCreateReview = (event) => {
     event.preventDefault();
@@ -17,7 +19,7 @@ const AddReview = () => {
       photoUrl: form.photoUrl.value,
       description: form.description.value,
     };
-    // console.log(review);
+    console.log(review);
 
     fetch("http://localhost:5000/review", {
       method: "POST",
@@ -30,6 +32,7 @@ const AddReview = () => {
       .then((data) => {
         if (data.insertedId) {
           toast.success("Succesfully created your review !!");
+          navigate("/services");
         } else {
           toast.error("Could not created your review !!");
         }
@@ -38,67 +41,76 @@ const AddReview = () => {
   };
 
   return (
-    <div className="hero my-7">
-      <div
-        className="hero-content  flex-col lg:flex-row-reverse "
-        style={{ width: "500px" }}
-      >
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100  ">
-          <form onSubmit={handleCreateReview} className="card-body w-96">
-            <h1 className="text-center text-4xl text-rose-500 font-bold">
-              Create a review !!
-            </h1>
+    <div className=" my-7">
+      <section className="bg-gray-100">
+        <div className="mx-auto max-w-screen-xl px-4 md:w-4/6 py-16 sm:px-6 lg:px-8">
+          <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
+            <form onSubmit={handleCreateReview} className="space-y-4">
+              <h1 className="text-center text-4xl text-rose-500 font-bold">
+                Create a review !!
+              </h1>
 
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Reviewer Name</span>
-              </label>
-              <input
-                type="text"
-                name="name"
-                defaultValue={user?.displayName}
-                className="input input-bordered"
-                required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Reviewer Photo Url</span>
-              </label>
-              <input
-                type="text"
-                name="photoUrl"
-                placeholder="Reviewer Photo Url"
-                className="input input-bordered"
-                required
-              />
-            </div>
+              <div>
+                <label className="sr-only">Reviewer Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  defaultValue={user?.displayName}
+                  required
+                  className="w-full rounded-lg border-gray-700 p-3 border-solid border"
+                  placeholder="Reviewer name"
+                />
+              </div>
 
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Write review</span>
-              </label>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div>
+                  <label className="sr-only">Photo Url</label>
+                  <input
+                    type="text"
+                    name="photoUrl"
+                    className="w-full rounded-lg border-gray-700 p-3 border-solid border"
+                    placeholder="Photo Url"
+                    required
+                  />
+                </div>
 
-              <textarea
-                type="text"
-                name="description"
-                className="textarea textarea-accent"
-                placeholder="type here..."
-                required
-              />
-            </div>
+                <div>
+                  <label className="sr-only">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    defaultValue={user?.email}
+                    className="w-full rounded-lg border-gray-700 p-3 text-sm border-solid border"
+                    placeholder="Email address"
+                    required
+                  />
+                </div>
+              </div>
 
-            <div className="form-control my-2">
-              <button
-                type="submit"
-                className="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500"
-              >
-                Create Service
-              </button>
-            </div>
-          </form>
+              <div>
+                <label className="sr-only">Write here</label>
+                <textarea
+                  type="text"
+                  name="description"
+                  className="w-full rounded-lg border-gray-700 p-3 text-sm border-solid border"
+                  placeholder="Review write here"
+                  rows="6"
+                  required
+                ></textarea>
+              </div>
+
+              <div className="mt-4">
+                <button
+                  type="submit"
+                  className="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500"
+                >
+                  Create Review
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

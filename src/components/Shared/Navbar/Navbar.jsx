@@ -67,12 +67,17 @@ const Navbar = () => {
                 <li className="text-white hover:text-indigo-200">
                   <Link to={"/services"}>Services</Link>
                 </li>
-                <li className="text-white hover:text-indigo-200">
-                  <Link to={"/addService"}>Add Service</Link>
-                </li>
-                <li className="text-white hover:text-indigo-200">
-                  <Link to={"/addReview"}>My Review</Link>
-                </li>
+                {user?.uid && (
+                  <>
+                    {" "}
+                    <li className="text-white hover:text-indigo-200">
+                      <Link to={"/addService"}>Add Service</Link>
+                    </li>
+                    <li className="text-white hover:text-indigo-200">
+                      <Link to={"/myReview"}>My Review</Link>
+                    </li>
+                  </>
+                )}
                 <li className="text-white hover:text-indigo-200">
                   <Link to={"/blogs"}>Blogs</Link>
                 </li>
@@ -81,12 +86,7 @@ const Navbar = () => {
               <div className="mt-3 space-y-2 md:hidden block text-center">
                 {user?.uid ? (
                   <div className=" items-center">
-                    <img
-                      src={user?.photoURL}
-                      className="h-12 w-12 rounded-full my-4 inline-block "
-                      alt=""
-                    />
-                    <h2 className="text-gray-100 font-semibold mb-4">
+                    <h2 className="text-gray-100 font-semibold my-4">
                       {user?.displayName}
                     </h2>
                     <button onClick={logOut} className="btn btn-sm w-full">
@@ -104,14 +104,10 @@ const Navbar = () => {
           <div className="hidden space-x-2 md:inline-block">
             {user?.uid ? (
               <div className="flex items-center">
-                <h2 className="text-gray-100 font-semibold">
+                <h2 className="text-gray-100 font-semibold mr-3">
                   {user?.displayName}
                 </h2>
-                <img
-                  src={user?.photoURL}
-                  className="h-12 w-12 rounded-full mx-4 "
-                  alt=""
-                />{" "}
+
                 <button onClick={logOut} className="btn btn-sm">
                   Logout
                 </button>

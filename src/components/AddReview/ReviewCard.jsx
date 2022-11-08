@@ -2,11 +2,13 @@ import React from "react";
 
 const ReviewCard = ({ reviewInfo }) => {
   console.log(reviewInfo);
+  const { description, photoUrl, reviewer } = reviewInfo;
   return (
-    <div>
-      <div className="group w-full bg-white relative border flex flex-col items-center hover:bg-rose-700 cursor-pointer shadow-md md:p-12 p-6">
+    <div className="">
+      <div className="group w-full bg-white relative border flex h-80 flex-col items-center hover:bg-rose-700 cursor-pointer shadow-xl md:p-12 p-6 duration-500 transition">
         <div className="text-gray-600 group-hover:text-white flex flex-col items-center">
           <svg
+            className="text-yellow-500"
             width={26}
             height={27}
             viewBox="0 0 26 27"
@@ -35,9 +37,7 @@ const ReviewCard = ({ reviewInfo }) => {
             </defs>
           </svg>
           <p className="xl:w-80 text-base leading-normal text-center mt-4">
-            When our designs need an expert opinion or approval, I know I can
-            rely on your agency Thank you for all your help-I will be
-            recommending you to everyone
+            {description}
           </p>
         </div>
         <div className="text-white group-hover:text-rose-700 absolute bottom-0 -mb-6">
@@ -116,15 +116,12 @@ const ReviewCard = ({ reviewInfo }) => {
       </div>
       <div className="flex flex-col items-center justify-center mt-10">
         <img
-          src="https://i.ibb.co/ZgF5Zzz/avatar-1.png"
+          src={photoUrl}
           alt="profile pictre"
-          className="w-12 h-12"
+          className="w-12 h-12 rounded-full"
         />
         <p className="text-base font-semibold leading-4 my-2 text-gray-800">
-          Tom Koch
-        </p>
-        <p className="text-base leading-4 text-center text-gray-600">
-          Developer
+          {reviewer}
         </p>
       </div>
     </div>
