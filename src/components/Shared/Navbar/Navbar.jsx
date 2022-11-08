@@ -65,6 +65,15 @@ const Navbar = () => {
                   <Link to={"/home"}>Home</Link>
                 </li>
                 <li className="text-white hover:text-indigo-200">
+                  <Link to={"/services"}>Services</Link>
+                </li>
+                <li className="text-white hover:text-indigo-200">
+                  <Link to={"/addService"}>Add Service</Link>
+                </li>
+                <li className="text-white hover:text-indigo-200">
+                  <Link to={"/addReview"}>My Review</Link>
+                </li>
+                <li className="text-white hover:text-indigo-200">
                   <Link to={"/blogs"}>Blogs</Link>
                 </li>
               </ul>

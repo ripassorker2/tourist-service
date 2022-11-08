@@ -1,8 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
+import AddReview from "../components/AddReview/AddReview";
+import Review from "../components/AddReview/Review";
+import AddService from "../components/AddService/AddService";
 import Blogs from "../components/Blogs/Blogs";
 import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
 import Resister from "../components/Resister/Resister";
+import ServiceDetails from "../components/Services/ServiceDetails";
+import Services from "../components/Services/Services";
 import Main from "../Main/Main";
 
 export const router = createBrowserRouter([
@@ -12,6 +17,25 @@ export const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/home", element: <Home /> },
+      { path: "/services", element: <Services /> },
+      { path: "/addService", element: <AddService /> },
+      {
+        path: "/serviceDetails/:id",
+        element: <ServiceDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/service/${params.id}`),
+      },
+      {
+        path: "/addReview/:id",
+        element: <AddReview />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/service/${params.id}`),
+      },
+      {
+        path: "/review",
+        element: <Review />,
+        loader: () => fetch(`http://localhost:5000/review`),
+      },
       { path: "/blogs", element: <Blogs /> },
       { path: "/login", element: <Login /> },
       { path: "/resister", element: <Resister /> },
