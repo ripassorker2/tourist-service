@@ -4,12 +4,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Login = () => {
-  const {
-    signInEmailPassword,
-    signWithGoogle,
-    signWithGitHub,
-    forgottenPassword,
-  } = useContext(AuthContext);
+  const { signInEmailPassword, signWithGoogle, signWithGitHub } =
+    useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -23,8 +19,19 @@ const Login = () => {
     const password = event.target.password.value;
 
     signInEmailPassword(email, password)
-      .then(() => {
+      .then((result) => {
+        const user = result.user;
+
+        const currentUser = {
+          email: user?.email,
+        };
+        console.log(currentUser);
+
         toast.success("Login succesFully");
+
+        //--------get jwt --------
+        getAndSetToken(currentUser);
+
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -38,6 +45,13 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         toast.success("Login succesfully ");
+
+        // --------set and get token----------
+        const currentUser = {
+          email: user?.email,
+        };
+        getAndSetToken(currentUser);
+
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -50,12 +64,35 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         toast.success("Login succesfully ");
+
+        // --------set and get token----------
+        const currentUser = {
+          email: user?.email,
+        };
+        getAndSetToken(currentUser);
+
         navigate(from, { replace: true });
       })
       .catch((error) => {
         const errorMessage = error.message;
         toast.error(errorMessage);
       });
+  };
+
+  const getAndSetToken = (currentUser) => {
+    fetch("http://localhost:5000/jwt", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(currentUser),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        localStorage.setItem("user-token", data?.token);
+      })
+      .catch((err) => console.error(err));
   };
 
   return (
@@ -137,7 +174,10 @@ const Login = () => {
                 Continue with Google
               </p>
             </button>
-            <button className="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full">
+            <button
+              onClick={handleGitHUbSignIn}
+              className="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full"
+            >
               <svg
                 width={21}
                 height={20}

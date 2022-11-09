@@ -4,14 +4,23 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import MyReviewCard from "./MyReviewCard";
 
 const MyReview = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myreview?email=${user?.email}`)
-      .then((res) => res.json())
+    fetch(`http://localhost:5000/myreview?email=${user?.email}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("user-token")}`,
+      },
+    })
+      .then((res) => {
+        if (res.status === 401 || res.status === 403 || res.status === 404) {
+          return logOut();
+        }
+        return res.json();
+      })
       .then((data) => setReviews(data));
-  }, [user?.email]);
+  }, [user?.email, logOut]);
 
   const handleRemoveItem = (id) => {
     const deleteConfirm = window.confirm(
@@ -20,9 +29,6 @@ const MyReview = () => {
     if (deleteConfirm) {
       fetch(`http://localhost:5000/myreview/${id}`, {
         method: "DELETE",
-        // headers: {
-        //   authorization: `Bearer ${localStorage.getItem("genius-token")}`,
-        // },
       })
         .then((res) => res.json())
         .then((data) => {

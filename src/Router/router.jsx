@@ -40,7 +40,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/updateReview/:id",
-        element: <UpdateMyReview />,
+        element: (
+          <PrivetRouter>
+            <UpdateMyReview />
+          </PrivetRouter>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/myreview/${params?.id}`),
       },

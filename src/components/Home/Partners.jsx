@@ -6,8 +6,8 @@ function Partner() {
       <div className="px-4 py-12">
         <div className="lg:max-w-[1440px] md:max-w-[744px] max-w-[375px] w-full  py-12 bg-gray-100 mx-auto">
           <div className="mb-10">
-            <p className="text-3xl font-semibold leading-9 text-center text-gray-800 lg:text-4xl">
-              Valuable Partnerships
+            <p className="text-3xl font-semibold leading-9 text-center text-rose-600 lg:text-5xl">
+              Support me
             </p>
           </div>
           <div className="lg:max-w-[1280px] w-full bg-white px-12 py-12 mx-auto">

@@ -10,7 +10,7 @@ const Bannar = () => {
         <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
           <div className="max-w-xl text-center sm:text-left">
             <h1 className="text-3xl font-extrabold md:text-gray-200 md:text-6xl">
-              <span className="text-rose-600"> Welcome</span> to our
+              <span className="text-rose-600"> Welcome</span> to my
               <strong className="block font-extrabold  py-3">
                 Tourist <span className="text-rose-600">Service</span>
               </strong>
@@ -24,7 +24,10 @@ const Bannar = () => {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4 text-center">
-              <Link className="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto">
+              <Link
+                to={"/services"}
+                className="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
+              >
                 Our Services
               </Link>
 

@@ -29,7 +29,7 @@ const MyReviewCard = ({ review, handleRemoveItem }) => {
           </div>
           <div className="text-center">
             <img
-              className="inline-block"
+              className="inline-block text-yellow-500"
               src="https://tuk-cdn.s3.amazonaws.com/can-uploader/testimonials-4-svg1.svg"
               alt="commas"
             />

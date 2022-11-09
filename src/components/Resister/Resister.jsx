@@ -51,6 +51,13 @@ const Resister = () => {
       .then((result) => {
         const user = result.user;
         toast.success("Login succesfully ");
+
+        // --------set and get token----------
+        const currentUser = {
+          email: user?.email,
+        };
+        getAndSetToken(currentUser);
+
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -59,18 +66,39 @@ const Resister = () => {
       });
   };
 
-  //   const handleGitHUbSignIn = () => {
-  //     signWithGitHub()
-  //       .then((result) => {
-  //         const user = result.user;
-  //         toast.success("Login succesfully ");
-  //         navigate(from, { replace: true });
-  //       })
-  //       .catch((error) => {
-  //         const errorMessage = error.message;
-  //         toast.error(errorMessage);
-  //       });
-  //   };
+  const handleGitHUbSignIn = () => {
+    signWithGitHub()
+      .then((result) => {
+        const user = result.user;
+        toast.success("Login succesfully ");
+        // --------set and get token----------
+        const currentUser = {
+          email: user?.email,
+        };
+        getAndSetToken(currentUser);
+
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        toast.error(errorMessage);
+      });
+  };
+
+  const getAndSetToken = (currentUser) => {
+    fetch("http://localhost:5000/jwt", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(currentUser),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        localStorage.setItem("user-token", data?.token);
+      })
+      .catch((err) => console.error(err));
+  };
 
   return (
     <div>
@@ -175,7 +203,10 @@ const Resister = () => {
                   Continue with Google
                 </p>
               </button>
-              <button className="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full">
+              <button
+                onClick={handleGitHUbSignIn}
+                className="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full"
+              >
                 <svg
                   width={21}
                   height={20}
