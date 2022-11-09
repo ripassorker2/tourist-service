@@ -33,7 +33,7 @@ const MyReview = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-            toast.success("Item deleted succesfully !!");
+            toast.success("Review deleted succesfully !!");
             const remaining = reviews.filter((or) => or._id !== id);
             setReviews(remaining);
           }
@@ -44,10 +44,17 @@ const MyReview = () => {
   return (
     <div className="lg:px-20 md:px-6 px-4 py-12">
       <div className="flex flex-col items-center justify-center">
-        <h1 className="lg:text-4xl text-3xl font-bold text-center text-gray-800">
-          Here my reviews !!
-        </h1>
+        {reviews?.length > 0 ? (
+          <h1 className="lg:text-4xl text-3xl font-bold text-center text-rose-500">
+            Here my reviews !!
+          </h1>
+        ) : (
+          <h2 className="lg:text-4xl text-3xl font-bold text-center text-rose-500">
+            You don't have no review !!
+          </h2>
+        )}
       </div>
+
       <div className="w-full grid md:grid-cols-2 items-center gap-6 mt-10">
         {reviews?.map((review) => (
           <MyReviewCard

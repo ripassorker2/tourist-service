@@ -94,7 +94,7 @@ const Navbar = () => {
                     </button>
                   </div>
                 ) : (
-                  <Link to={"/login"} className="btn btn-sm">
+                  <Link to={"/login"} className="btn btn-sm w-full">
                     Sign in
                   </Link>
                 )}
@@ -113,7 +113,7 @@ const Navbar = () => {
                 </button>
               </div>
             ) : (
-              <Link to={"/login"} className="btn btn-sm">
+              <Link to={"/login"} className="btn btn-sm ">
                 Sign in
               </Link>
             )}

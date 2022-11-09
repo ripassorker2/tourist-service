@@ -5,12 +5,9 @@ const Team = () => {
     <div>
       <div className="container flex justify-center mx-auto pt-16">
         <div>
-          <p className="text-rose-500 font-bold md:text-5xl text-2xl text-center  pb-3">
-            My workers
+          <p className="text-rose-500 my-7 font-bold md:text-5xl text-2xl text-center  pb-3">
+            My Clients
           </p>
-          <h1 className=" text-3xl text-center text-gray-800 font-semibold pb-6 sm:w-4/6 w-5/6 mx-auto">
-            The Talented People Behind the Scenes of the Organization
-          </h1>
         </div>
       </div>
       <div className="w-full bg-gray-100 px-10 md:px-20 pt-10">

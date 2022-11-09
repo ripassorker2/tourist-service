@@ -20,7 +20,7 @@ const MyReviewCard = ({ review, handleRemoveItem }) => {
           <div>
             <img
               src={serviceDetails?.photoUrl}
-              className="w-full h-40"
+              className="w-full h-48"
               alt=""
             />
             <h3 className="text-3xl text-center font-bold my-3">

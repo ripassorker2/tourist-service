@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Bannar = () => {
   return (
     <div className="-z-20">
-      <section className="relative bg-[url(https://dailyasianage.com/library/1582060099_9.jpg)] bg-cover bg-center bg-no-repeat">
+      <section className="relative bg-[url(https://images.unsplash.com/photo-1596436889106-be35e843f974?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80)] bg-cover bg-center bg-no-repeat">
         <div className="absolute inset-0  bg-transparent bg-gradient-to-r from-black/70 to-white/25"></div>
 
         <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">

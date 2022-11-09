@@ -1,6 +1,8 @@
 import React from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import "react-photo-view/dist/react-photo-view.css";
 
 const HomeServiceCard = ({ service }) => {
   const { spot, price, description, photoUrl, _id } = service;
@@ -8,9 +10,14 @@ const HomeServiceCard = ({ service }) => {
   return (
     <div className="flex justify-center shadow-xl">
       <div className="rounded-lg shadow-lg bg-white max-w-sm">
-        <a href="#!">
-          <img className="rounded-t-lg w-full h-52" src={photoUrl} alt="" />
-        </a>
+        <PhotoProvider>
+          <PhotoView src={photoUrl}>
+            <a href="#!">
+              <img className="rounded-t-lg w-full h-52" src={photoUrl} alt="" />
+            </a>
+          </PhotoView>
+        </PhotoProvider>
+
         <div className="p-6">
           <h5 className="text-gray-900 text-2xl font-bold mb-2">{spot}</h5>
           <h5 className="text-gray-900 text-xl font-semibold mb-2">

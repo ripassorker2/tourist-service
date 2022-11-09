@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Bannar from "./Bannar";
 import HomeServiceCard from "./HomeServiceCard";
-import Partner from "./Partners";
 import { BsArrowRightCircle } from "react-icons/bs";
-// import JoinUs from "./JoinUs";
-import Team from "./Team";
-import JoinUs from "./JoinUs";
+import Connect from "./Connect";
+import Client from "./Client";
+import Contact from "./Contact";
 
 const Home = () => {
   const [services, setServices] = useState([]);
@@ -20,7 +19,6 @@ const Home = () => {
   return (
     <div>
       <Bannar />
-
       <div className="my-11">
         <h1 className="text-center md:text-6xl font-bold text-3xl text-rose-600">
           My Services{" "}
@@ -39,10 +37,9 @@ const Home = () => {
           </Link>
         </div>
       </div>
-
-      <Team />
-      <Partner />
-      <JoinUs />
+      <Client />
+      <Connect />
+      <Contact />
     </div>
   );
 };
