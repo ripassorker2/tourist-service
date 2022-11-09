@@ -15,8 +15,10 @@ const AddReview = () => {
 
     const review = {
       serviceId: reviewService?._id,
+      email: form.email.value,
       reviewer: form.name.value,
-      photoUrl: form.photoUrl.value,
+      rating: form.rating.value,
+      photoUrl: user?.photoURL,
       description: form.description.value,
     };
     console.log(review);
@@ -64,12 +66,12 @@ const AddReview = () => {
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="sr-only">Photo Url</label>
+                  <label className="sr-only">Ratting</label>
                   <input
-                    type="text"
-                    name="photoUrl"
+                    type="number"
+                    name="rating"
                     className="w-full rounded-lg border-gray-700 p-3 border-solid border"
-                    placeholder="Photo Url"
+                    placeholder="Ratting"
                     required
                   />
                 </div>

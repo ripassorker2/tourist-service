@@ -46,7 +46,7 @@ const AddService = () => {
           <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
             <form onSubmit={handleCreateService} className="space-y-4">
               <h1 className="text-center text-4xl text-rose-500 font-bold pb-6">
-                Add Service Info
+                Add Service
               </h1>
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

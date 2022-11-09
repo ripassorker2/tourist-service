@@ -37,7 +37,9 @@ const ReviewCard = ({ reviewInfo }) => {
             </defs>
           </svg>
           <p className="xl:w-80 text-base leading-normal text-center mt-4">
-            {description}
+            {description.length > 320
+              ? description.slice(0, 320) + "..."
+              : description}
           </p>
         </div>
         <div className="text-white group-hover:text-rose-700 absolute bottom-0 -mb-6">
