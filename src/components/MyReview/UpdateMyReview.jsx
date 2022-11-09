@@ -17,13 +17,16 @@ const UpdateMyReview = () => {
       description: form.description.value,
     };
 
-    fetch(`http://localhost:5000/myreview/${reviewData?._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(review),
-    })
+    fetch(
+      `https://assignment-server-drab.vercel.app/myreview/${reviewData?._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(review),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {

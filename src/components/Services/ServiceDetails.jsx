@@ -27,7 +27,7 @@ const ServiceDetails = () => {
               {spot}
             </h2>
             <h2 className="text-gray-800 dark:text-gray-100 mt-4 mb-2 tracking-normal text-lg lg:text-xl font-semibold">
-              Travel Cost : ${price}
+              Service price : ${price}
             </h2>
             <p className="mb-6 text-base text-gray-600 dark:text-gray-400  tracking-normal w-11/12 lg:w-9/12">
               {description}

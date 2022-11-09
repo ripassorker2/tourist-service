@@ -22,7 +22,7 @@ const AddReview = () => {
       description: form.description.value,
     };
 
-    fetch("http://localhost:5000/review", {
+    fetch("https://assignment-server-drab.vercel.app/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -8,11 +8,14 @@ const MyReview = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myreview?email=${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("user-token")}`,
-      },
-    })
+    fetch(
+      `https://assignment-server-drab.vercel.app/myreview?email=${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("user-token")}`,
+        },
+      }
+    )
       .then((res) => {
         if (res.status === 401 || res.status === 403 || res.status === 404) {
           return logOut();
@@ -27,7 +30,7 @@ const MyReview = () => {
       `Are you sure? You want to delete this item.`
     );
     if (deleteConfirm) {
-      fetch(`http://localhost:5000/myreview/${id}`, {
+      fetch(`https://assignment-server-drab.vercel.app/myreview/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

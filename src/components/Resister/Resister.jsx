@@ -93,7 +93,7 @@ const Resister = () => {
   };
 
   const getAndSetToken = (currentUser) => {
-    fetch("http://localhost:5000/jwt", {
+    fetch("https://assignment-server-drab.vercel.app/jwt", {
       method: "POST",
       headers: {
         "content-type": "application/json",

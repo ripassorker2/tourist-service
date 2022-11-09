@@ -8,7 +8,7 @@ const MyReviewCard = ({ review, handleRemoveItem }) => {
   const [serviceDetails, setServicesDetails] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${serviceId}`)
+    fetch(`https://assignment-server-drab.vercel.app/services/${serviceId}`)
       .then((res) => res.json())
       .then((data) => setServicesDetails(data));
   }, [serviceId]);
@@ -65,7 +65,7 @@ const MyReviewCard = ({ review, handleRemoveItem }) => {
           <div className="flex items-start ml-4">
             <Link to={`/updateReview/${_id}`}>
               <button className="btn btn-sm btn-secondary inline-block mr-3">
-                Update
+                Edit Review
               </button>
             </Link>
             <button

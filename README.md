@@ -1,7 +1,7 @@
 # Project Name: Tourist Service
 
-- [Live Link]()
-- [GitHub Code Link](https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-ripassorker2)
+- [Live Link](https://service-review-assigment.web.app/)
+- [GitHub Server Code Link](https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-ripassorker2)
 
 ## Website Details
 

@@ -46,13 +46,17 @@ export const router = createBrowserRouter([
           </PrivetRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/myreview/${params?.id}`),
+          fetch(
+            `https://assignment-server-drab.vercel.app/myreview/${params?.id}`
+          ),
       },
       {
         path: "/serviceDetails/:id",
         element: <ServiceDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/service/${params.id}`),
+          fetch(
+            `https://assignment-server-drab.vercel.app/service/${params.id}`
+          ),
       },
       {
         path: "/addReview/:id",
@@ -62,12 +66,14 @@ export const router = createBrowserRouter([
           </PrivetRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/service/${params.id}`),
+          fetch(
+            `https://assignment-server-drab.vercel.app/service/${params.id}`
+          ),
       },
       {
         path: "/review",
         element: <Review />,
-        loader: () => fetch(`http://localhost:5000/review`),
+        loader: () => fetch(`https://assignment-server-drab.vercel.app/review`),
       },
       { path: "/blogs", element: <Blogs /> },
       { path: "/login", element: <Login /> },

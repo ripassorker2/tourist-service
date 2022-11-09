@@ -19,7 +19,7 @@ const AddService = () => {
       description: form.description.value,
     };
 
-    fetch("http://localhost:5000/service", {
+    fetch("https://assignment-server-drab.vercel.app/service", {
       method: "POST",
       headers: {
         "content-type": "application/json",
