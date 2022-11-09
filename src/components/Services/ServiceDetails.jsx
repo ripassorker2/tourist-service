@@ -10,7 +10,6 @@ const ServiceDetails = () => {
 
   const { photoUrl, price, spot, _id, description } = serviceDetails;
 
-  //   console.log(serviceDetails);
   return (
     <div className="my-11 px-16">
       <div className="flex flex-col-reverse lg:flex-row w-full bg-white dark:bg-gray-800 shadow rounded">

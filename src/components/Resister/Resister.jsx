@@ -27,8 +27,15 @@ const Resister = () => {
     createUserEmailPassword(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+
         toast.success("Created user succesfully !!");
+
+        // --------set and get token----------
+        const currentUser = {
+          email: user?.email,
+        };
+        getAndSetToken(currentUser);
+
         updateUserProfile(name, photoUrl)
           .then(() => {
             toast.success("Updated user profile !!");

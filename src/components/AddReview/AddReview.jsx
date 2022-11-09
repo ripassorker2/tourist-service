@@ -21,7 +21,6 @@ const AddReview = () => {
       photoUrl: user?.photoURL,
       description: form.description.value,
     };
-    console.log(review);
 
     fetch("http://localhost:5000/review", {
       method: "POST",

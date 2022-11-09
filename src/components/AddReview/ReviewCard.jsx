@@ -1,7 +1,6 @@
 import React from "react";
 
 const ReviewCard = ({ reviewInfo }) => {
-  console.log(reviewInfo);
   const { description, photoUrl, reviewer } = reviewInfo;
   return (
     <div className="">

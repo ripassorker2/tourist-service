@@ -3,21 +3,21 @@ import React from "react";
 const Contact = () => {
   return (
     <div>
-      <div class="container my-24 px-6 mx-auto">
-        <section class="mb-32 text-gray-800">
+      <div className="container my-24 px-6 mx-auto">
+        <section className="mb-32 text-gray-800">
           <h1 className="text-5xl text-rose-500 font-bold text-center">
             Contact Me{" "}
           </h1>
-          <div class="relative overflow-hidden bg-no-repeat bg-cover"></div>
-          <div class="container text-gray-800 px-4 md:px-12">
-            <div class="block rounded-lg shadow-lg py-10 md:py-12 px-2 md:px-6">
-              <div class="flex flex-wrap">
-                <div class="grow-0 shrink-0 basis-auto w-full xl:w-5/12 px-3 lg:px-6 mb-12 xl:mb-0">
+          <div className="relative overflow-hidden bg-no-repeat bg-cover"></div>
+          <div className="container text-gray-800 px-4 md:px-12">
+            <div className="block rounded-lg shadow-lg py-10 md:py-12 px-2 md:px-6">
+              <div className="flex flex-wrap">
+                <div className="grow-0 shrink-0 basis-auto w-full xl:w-5/12 px-3 lg:px-6 mb-12 xl:mb-0">
                   <form>
-                    <div class="form-group mb-6">
+                    <div className="form-group mb-6">
                       <input
                         type="text"
-                        class="form-control block
+                        className="form-control block
               w-full
               px-3
               py-1.5
@@ -35,10 +35,10 @@ const Contact = () => {
                         placeholder="Name"
                       />
                     </div>
-                    <div class="form-group mb-6">
+                    <div className="form-group mb-6">
                       <input
                         type="email"
-                        class="form-control block
+                        className="form-control block
               w-full
               px-3
               py-1.5
@@ -56,9 +56,9 @@ const Contact = () => {
                         placeholder="Email address"
                       />
                     </div>
-                    <div class="form-group mb-6">
+                    <div className="form-group mb-6">
                       <textarea
-                        class="
+                        className="
               form-control
               block
               w-full
@@ -83,25 +83,25 @@ const Contact = () => {
 
                     <button
                       type="submit"
-                      class="
+                      className="
                       inline-block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500  "
                     >
                       Send
                     </button>
                   </form>
                 </div>
-                <div class="grow-0 shrink-0 basis-auto w-full xl:w-7/12">
-                  <div class="flex flex-wrap">
-                    <div class="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
-                      <div class="flex items-start">
-                        <div class="shrink-0">
-                          <div class="p-4 bg-rose-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                <div className="grow-0 shrink-0 basis-auto w-full xl:w-7/12">
+                  <div className="flex flex-wrap">
+                    <div className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                      <div className="flex items-start">
+                        <div className="shrink-0">
+                          <div className="p-4 bg-rose-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                             <svg
                               aria-hidden="true"
                               focusable="false"
                               data-prefix="fas"
                               data-icon="headset"
-                              class="w-5 text-white"
+                              className="w-5 text-white"
                               role="img"
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 512 512"
@@ -113,23 +113,23 @@ const Contact = () => {
                             </svg>
                           </div>
                         </div>
-                        <div class="grow ml-6">
-                          <p class="font-bold mb-1">Technical support</p>
-                          <p class="text-gray-500">support@example.com</p>
-                          <p class="text-gray-500">+1 234-567-89</p>
+                        <div className="grow ml-6">
+                          <p className="font-bold mb-1">Technical support</p>
+                          <p className="text-gray-500">support@example.com</p>
+                          <p className="text-gray-500">+1 234-567-89</p>
                         </div>
                       </div>
                     </div>
-                    <div class="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
-                      <div class="flex items-start">
-                        <div class="shrink-0">
-                          <div class="p-4 bg-rose-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                    <div className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                      <div className="flex items-start">
+                        <div className="shrink-0">
+                          <div className="p-4 bg-rose-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                             <svg
                               aria-hidden="true"
                               focusable="false"
                               data-prefix="fas"
                               data-icon="dollar-sign"
-                              class="w-3 text-white"
+                              className="w-3 text-white"
                               role="img"
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 288 512"
@@ -141,23 +141,23 @@ const Contact = () => {
                             </svg>
                           </div>
                         </div>
-                        <div class="grow ml-6">
-                          <p class="font-bold mb-1">Sales questions</p>
-                          <p class="text-gray-500">sales@example.com</p>
-                          <p class="text-gray-500">+1 234-567-89</p>
+                        <div className="grow ml-6">
+                          <p className="font-bold mb-1">Sales questions</p>
+                          <p className="text-gray-500">sales@example.com</p>
+                          <p className="text-gray-500">+1 234-567-89</p>
                         </div>
                       </div>
                     </div>
-                    <div class="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
-                      <div class="flex align-start">
-                        <div class="shrink-0">
-                          <div class="p-4 bg-rose-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                    <div className="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                      <div className="flex align-start">
+                        <div className="shrink-0">
+                          <div className="p-4 bg-rose-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                             <svg
                               aria-hidden="true"
                               focusable="false"
                               data-prefix="fas"
                               data-icon="newspaper"
-                              class="w-5 text-white"
+                              className="w-5 text-white"
                               role="img"
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 576 512"
@@ -169,23 +169,23 @@ const Contact = () => {
                             </svg>
                           </div>
                         </div>
-                        <div class="grow ml-6">
-                          <p class="font-bold mb-1">Press</p>
-                          <p class="text-gray-500">press@example.com</p>
-                          <p class="text-gray-500">+1 234-567-89</p>
+                        <div className="grow ml-6">
+                          <p className="font-bold mb-1">Press</p>
+                          <p className="text-gray-500">press@example.com</p>
+                          <p className="text-gray-500">+1 234-567-89</p>
                         </div>
                       </div>
                     </div>
-                    <div class="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
-                      <div class="flex align-start">
-                        <div class="shrink-0">
-                          <div class="p-4 bg-rose-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                    <div className="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                      <div className="flex align-start">
+                        <div className="shrink-0">
+                          <div className="p-4 bg-rose-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                             <svg
                               aria-hidden="true"
                               focusable="false"
                               data-prefix="fas"
                               data-icon="bug"
-                              class="w-5 text-white"
+                              className="w-5 text-white"
                               role="img"
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 512 512"
@@ -197,10 +197,10 @@ const Contact = () => {
                             </svg>
                           </div>
                         </div>
-                        <div class="grow ml-6">
-                          <p class="font-bold mb-1">Bug report</p>
-                          <p class="text-gray-500">bugs@example.com</p>
-                          <p class="text-gray-500">+1 234-567-89</p>
+                        <div className="grow ml-6">
+                          <p className="font-bold mb-1">Bug report</p>
+                          <p className="text-gray-500">bugs@example.com</p>
+                          <p className="text-gray-500">+1 234-567-89</p>
                         </div>
                       </div>
                     </div>

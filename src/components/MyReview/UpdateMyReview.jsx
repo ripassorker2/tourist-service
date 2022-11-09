@@ -5,7 +5,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const UpdateMyReview = () => {
   const reviewData = useLoaderData();
-  console.log(reviewData);
+
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -16,7 +16,6 @@ const UpdateMyReview = () => {
     const review = {
       description: form.description.value,
     };
-    console.log(review);
 
     fetch(`http://localhost:5000/myreview/${reviewData?._id}`, {
       method: "PUT",
@@ -27,7 +26,6 @@ const UpdateMyReview = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.modifiedCount) {
           toast.success("Succesfully updated your review !!");
           navigate("/myReview");

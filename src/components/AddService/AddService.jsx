@@ -18,7 +18,6 @@ const AddService = () => {
       price: form.price.value,
       description: form.description.value,
     };
-    console.log(services);
 
     fetch("http://localhost:5000/service", {
       method: "POST",
