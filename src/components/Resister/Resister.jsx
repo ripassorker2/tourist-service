@@ -115,9 +115,13 @@ const Resister = () => {
   return (
     <div>
       <div className="hero my-7">
-        <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="hero-content flex-col md:flex-row-reverse">
           <div className="text-center lg:text-left md:w-1/2 md:pl-9">
-            <img src="" alt="" className="" />
+            <img
+              src="https://cdn.dribbble.com/users/3618930/screenshots/6639732/g2.6_4x.jpg"
+              alt=""
+              className=""
+            />
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 ">
             <form onSubmit={handleSubmitInfo} className="card-body">
