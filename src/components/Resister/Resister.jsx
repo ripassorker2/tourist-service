@@ -102,7 +102,7 @@ const Resister = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         localStorage.setItem("user-token", data?.token);
       })
       .catch((err) => console.error(err));

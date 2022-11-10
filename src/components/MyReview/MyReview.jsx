@@ -52,9 +52,11 @@ const MyReview = () => {
             Here my reviews !!
           </h1>
         ) : (
-          <h2 className="lg:text-4xl text-3xl font-bold text-center text-rose-500">
-            You don't have no review !!
-          </h2>
+          <div className="flex justify-center items-center h-screen w-full">
+            <h2 className="lg:text-4xl text-3xl font-bold text-center text-rose-500">
+              No reviews were added !!
+            </h2>
+          </div>
         )}
       </div>
 
