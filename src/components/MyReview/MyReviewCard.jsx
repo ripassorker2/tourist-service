@@ -18,13 +18,13 @@ const MyReviewCard = ({ review, handleRemoveItem }) => {
       <div className="">
         <div className="bg-white border rounded-md border-gray-200 relative sm:p-10 p-6">
           <div>
-            <img
+            {/* <img
               src={serviceDetails?.photoUrl}
               className="w-full h-48"
               alt=""
-            />
-            <h3 className="text-3xl text-center font-bold my-3">
-              Service name : {serviceDetails?.spot}
+            /> */}
+            <h3 className="text-2xl text-center font-bold my-3">
+              Service : {serviceDetails?.spot}
             </h3>
           </div>
           <div className="text-center">
