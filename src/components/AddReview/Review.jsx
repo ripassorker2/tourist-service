@@ -8,7 +8,9 @@ const Review = () => {
   const reviewService = useLoaderData();
 
   useEffect(() => {
-    fetch(`https://assignment-server-drab.vercel.app/review?reviewId=${reviewService?._id}`)
+    fetch(
+      `https://assignment-server-drab.vercel.app/review?reviewId=${reviewService?._id}`
+    )
       .then((res) => res.json())
       .then((data) => setReviewData(data));
   }, [reviewService?._id]);
