@@ -6,9 +6,11 @@ import { BsArrowRightCircle } from "react-icons/bs";
 import Connect from "./Connect";
 import Client from "./Client";
 import Contact from "./Contact";
+import useTitle from "../../hooks/useTitle";
 
 const Home = () => {
   const [services, setServices] = useState([]);
+  useTitle("Home ");
 
   useEffect(() => {
     fetch("https://assignment-server-drab.vercel.app/service")

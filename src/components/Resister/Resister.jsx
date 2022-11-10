@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const Resister = () => {
+  useTitle("Resister");
   const {
     createUserEmailPassword,
     updateUserProfile,

@@ -2,10 +2,12 @@ import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const AddService = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
+  useTitle("Add service");
 
   const handleCreateService = (event) => {
     event.preventDefault();
