@@ -52,23 +52,8 @@ const MyReview = () => {
 
   return (
     <div className="lg:px-20 md:px-6 px-4 py-12">
-      <div className="flex flex-col items-center justify-center">
-        {reviews?.length > 0 ? (
-          <h1 className="lg:text-4xl text-3xl font-bold text-center text-rose-500">
-            Here my reviews !!
-          </h1>
-        ) : (
-          <div className="flex justify-center items-center h-screen w-full">
-            <h2 className="lg:text-4xl text-3xl font-bold text-center text-rose-500">
-              No reviews were added !!
-            </h2>
-          </div>
-        )}
-      </div>
-
       {loding ? (
         <>
-          {" "}
           <div
             role="status"
             className="w-full h-screen flex items-center justify-center"
@@ -90,11 +75,24 @@ const MyReview = () => {
               ></path>
             </svg>
             <span className="sr-only">Loading...</span>
-          </div>{" "}
+          </div>
         </>
       ) : (
         <>
-          {" "}
+          <div className="flex flex-col items-center justify-center">
+            {reviews?.length > 0 ? (
+              <h1 className="lg:text-4xl text-3xl font-bold text-center text-rose-500">
+                Here my reviews !!
+              </h1>
+            ) : (
+              <div className="flex justify-center items-center h-screen w-full">
+                <h2 className="lg:text-4xl text-3xl font-bold text-center text-rose-500">
+                  No reviews were added !!
+                </h2>
+              </div>
+            )}
+          </div>
+
           <div className="w-full grid md:grid-cols-2 items-center gap-6 mt-10">
             {reviews?.map((review) => (
               <MyReviewCard
@@ -103,7 +101,7 @@ const MyReview = () => {
                 review={review}
               ></MyReviewCard>
             ))}
-          </div>{" "}
+          </div>
         </>
       )}
     </div>
