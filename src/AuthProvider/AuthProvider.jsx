@@ -75,6 +75,7 @@ const AuthProvider = ({ children }) => {
     createUserEmailPassword,
     signInEmailPassword,
     loader,
+    setLoader,
     updateUserProfile,
     signWithGitHub,
     forgottenPassword,

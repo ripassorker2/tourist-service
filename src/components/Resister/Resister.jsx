@@ -11,6 +11,7 @@ const Resister = () => {
     updateUserProfile,
     signWithGoogle,
     signWithGitHub,
+    setLoader,
   } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -43,6 +44,7 @@ const Resister = () => {
             toast.success("Updated user profile !!");
             form.reset();
             navigate(from, { replace: true });
+            setLoader(false);
           })
           .catch((error) => {
             const errorMessage = error.message;
