@@ -123,7 +123,7 @@ const Resister = () => {
               className=""
             />
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 ">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
             <form onSubmit={handleSubmitInfo} className="card-body">
               <h1 className="text-center text-4xl text-rose-500 font-bold">
                 RESISTER
@@ -136,7 +136,7 @@ const Resister = () => {
                   type="text"
                   name="name"
                   placeholder="name"
-                  className="input input-bordered"
+                  className="input input-bordered bg-slate-100 focus:border-black"
                   required
                 />
               </div>
@@ -148,7 +148,7 @@ const Resister = () => {
                   type="text"
                   name="photoUrl"
                   placeholder="photo url"
-                  className="input input-bordered"
+                  className="input input-bordered bg-slate-100 focus:border-black"
                   required
                 />
               </div>
@@ -160,7 +160,7 @@ const Resister = () => {
                   type="text"
                   name="email"
                   placeholder="email"
-                  className="input input-bordered"
+                  className="input input-bordered bg-slate-100 focus:border-black"
                   required
                 />
               </div>
@@ -172,7 +172,7 @@ const Resister = () => {
                   type="password"
                   name="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input input-bordered bg-slate-100 focus:border-black"
                   required
                 />
               </div>

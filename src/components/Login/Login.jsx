@@ -105,7 +105,7 @@ const Login = () => {
             className=" rounded-xl"
           />
         </div>
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 ">
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-gray-100 text-white ">
           <form onSubmit={handleSubmitInfo} className="card-body">
             <h1 className="text-center text-4xl text-rose-500 font-bold">
               SIGN IN
@@ -140,7 +140,7 @@ const Login = () => {
                 Login
               </button>
             </div>
-            <div className="text-sm ">
+            <div className="text-sm text-gray-700">
               If you have alreadey an account ?{" "}
               <Link to={"/resister"} className="text-blue-700">
                 RESISTER

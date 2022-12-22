@@ -3,10 +3,10 @@ import React from "react";
 const Connect = () => {
   return (
     <div>
-      <div classname="overflow-y-hidden bg-gray-100">
+      <div classname="overflow-y-hidden bg-gray-600">
         <div className="mx-auto container f-f-p px-4 xl:px-0 py-24">
           <h1 className="focus:outline-none text-center text-3xl md:text-5xl font-extrabold lg:leading-9 tracking-wider text-rose-500">
-            How connect us
+            How connect me
           </h1>
           <div className="md:mt-24 f-f-p">
             <div className="hidden md:flex justify-center w-full">
