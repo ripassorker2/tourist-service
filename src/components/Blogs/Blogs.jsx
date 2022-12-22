@@ -10,7 +10,7 @@ const Blogs = () => {
   //   const [open5, setOpen5] = useState(false);
 
   return (
-    <div className=" lg:container lg:mx-auto lg:py-16 md:py-12 md:px-6 py-12 px-4">
+    <div className=" lg:container lg:mx-auto lg:py-16 md:py-12 md:px-6 py-12 px-6">
       <h1 className="text-center lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800 font-semibold">
         Frequently ask some quistion !!
       </h1>
